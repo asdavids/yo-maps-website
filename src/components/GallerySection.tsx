@@ -1,39 +1,20 @@
 import { motion } from 'motion/react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 import { Expand } from 'lucide-react';
 
 export function GallerySection() {
   const images = [
-    {
-      src: 'https://images.unsplash.com/photo-1566735355835-bddb43dc3f63?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-      span: 'col-span-2 row-span-2',
-      alt: 'Yo Maps live concert',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1709731191876-899e32264420?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      span: 'col-span-1 row-span-1',
-      alt: 'Stage lights',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1598488035252-042a85bc8e5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      span: 'col-span-1 row-span-1',
-      alt: 'Studio session',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1571974599782-87624638275e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      span: 'col-span-1 row-span-2',
-      alt: 'Yo Maps portrait',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      span: 'col-span-1 row-span-1',
-      alt: 'Performance',
-    },
-    {
-      src: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800',
-      span: 'col-span-2 row-span-1',
-      alt: 'Music production',
-    },
+    { src: '/gallery-12.jpeg', span: 'col-span-2 row-span-2', alt: 'Yo Maps performing live — crowd energy' },
+    { src: '/gallery-4.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps red leather jacket studio shoot' },
+    { src: '/gallery-9.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps jumping on stage' },
+    { src: '/gallery-2.jpeg',  span: 'col-span-1 row-span-2', alt: 'Yo Maps portrait — bandana and gold chain' },
+    { src: '/gallery-3.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps performing in red varsity jacket' },
+    { src: '/gallery-8.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps on stage pointing at crowd' },
+    { src: '/gallery-11.jpeg', span: 'col-span-1 row-span-2', alt: 'Yo Maps seated in van — denim fit' },
+    { src: '/gallery-5.jpeg',  span: 'col-span-1 row-span-1', alt: 'Fans celebrating' },
+    { src: '/gallery-10.jpeg', span: 'col-span-1 row-span-1', alt: 'Crowd reaching for Yo Maps' },
+    { src: '/gallery-1.jpeg',  span: 'col-span-1 row-span-2', alt: 'Yo Maps — Yo Boy leather jacket' },
+    { src: '/gallery-6.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps walking with Lamborghini' },
+    { src: '/gallery-7.jpeg',  span: 'col-span-1 row-span-1', alt: 'Yo Maps by Lamborghini with duffle bag' },
   ];
 
   return (
@@ -61,15 +42,15 @@ export function GallerySection() {
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              transition={{ delay: index * 0.06 }}
               className={`${image.span} group relative overflow-hidden rounded-lg cursor-pointer`}
             >
-              <ImageWithFallback
+              <img
                 src={image.src}
                 alt={image.alt}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
               />
-              <div className="absolute inset-0 bg-black/65 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Expand className="text-amber-400" size={28} />
               </div>
               <div className="absolute inset-0 border-2 border-amber-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -83,9 +64,14 @@ export function GallerySection() {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <button className="px-10 py-4 border-2 border-amber-400 text-amber-400 tracking-widest hover:bg-amber-400 hover:text-black transition-all duration-300">
+          <a
+            href="https://www.instagram.com/yomapsofficial?igsh=ajgydGhhcXFxbGlw"
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block px-10 py-4 border-2 border-amber-400 text-amber-400 tracking-widest hover:bg-amber-400 hover:text-black transition-all duration-300"
+          >
             VIEW FULL GALLERY
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>
