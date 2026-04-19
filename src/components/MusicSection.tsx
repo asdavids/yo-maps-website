@@ -7,7 +7,7 @@ export function MusicSection() {
     {
       title: 'VIBES ON VIBES',
       year: '2026',
-      image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+      image: '/yo-maps-album.jpg',
       tracks: 16,
       feat: 'New Album · Apr 24, 2026',
     },
