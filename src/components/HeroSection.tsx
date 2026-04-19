@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { Play, Music2 } from 'lucide-react';
+import { Play } from 'lucide-react';
 
 const streamingPlatforms = [
   {
@@ -51,12 +51,12 @@ export function HeroSection() {
 
       <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
         <motion.div
-          initial={{ scale: 0 }}
-          animate={{ scale: 1 }}
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'backOut' }}
           className="mb-6"
         >
-          <Music2 size={52} className="text-amber-400 mx-auto" />
+          <img src="/yo-maps-logo.png" alt="Yo Maps" className="w-48 md:w-64 mx-auto" />
         </motion.div>
 
         <motion.p
@@ -65,7 +65,7 @@ export function HeroSection() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-amber-400 tracking-[0.4em] text-xs uppercase mb-4"
         >
-          Zambia's Voice of Love
+          International Artist
         </motion.p>
 
         <motion.h1
