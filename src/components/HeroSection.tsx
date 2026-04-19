@@ -8,7 +8,7 @@ export function HeroSection() {
         <img
           src="/yo-maps-hero.jpg"
           alt="Yo Maps"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover object-top"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black"></div>
       </div>
