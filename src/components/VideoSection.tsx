@@ -1,30 +1,58 @@
+import { useState } from 'react';
 import { motion } from 'motion/react';
+import { Play } from 'lucide-react';
+
+function YouTubeFacade({ embedId, title }: { embedId: string; title: string }) {
+  const [loaded, setLoaded] = useState(false);
+  const thumb = `https://img.youtube.com/vi/${embedId}/hqdefault.jpg`;
+
+  if (loaded) {
+    return (
+      <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+        <iframe
+          className="absolute inset-0 w-full h-full"
+          src={`https://www.youtube.com/embed/${embedId}?autoplay=1&rel=0&modestbranding=1`}
+          title={title}
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    );
+  }
+
+  return (
+    <div
+      className="relative w-full cursor-pointer group"
+      style={{ paddingBottom: '56.25%' }}
+      onClick={() => setLoaded(true)}
+    >
+      <img
+        src={thumb}
+        alt={title}
+        loading="lazy"
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/30 group-hover:bg-black/20 transition-colors duration-300" />
+      {/* Play button */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <motion.div
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.95 }}
+          className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-red-600 hover:bg-red-700 flex items-center justify-center shadow-lg transition-colors duration-200"
+        >
+          <Play size={22} fill="white" className="text-white ml-1" />
+        </motion.div>
+      </div>
+    </div>
+  );
+}
 
 export function VideoSection() {
   const videos = [
-    {
-      title: 'So Mone',
-      feat: 'feat. Tay Grin',
-      embedId: 'Cu7UZWeRccc',
-    },
-    {
-      title: 'Try Again',
-      feat: 'feat. Abel Chungu',
-      embedId: 'q_3qGYZotyM',
-    },
-    {
-      title: 'Pick It Up',
-      feat: 'Yo Maps',
-      embedId: 'yhdi24skNV8',
-    },
-  ];
-
-  // Extract YouTube ID from the provided URLs
-  // https://youtu.be/yACnOHr5L4Y, https://youtu.be/vDkimmBktms, https://youtu.be/KjOBNrBEebI
-  const featuredVideos = [
-    { embedId: 'yACnOHr5L4Y', title: 'Featured Video 1' },
-    { embedId: 'vDkimmBktms', title: 'Featured Video 2' },
-    { embedId: 'KjOBNrBEebI', title: 'Featured Video 3' },
+    { embedId: 'yACnOHr5L4Y', title: 'Yo Maps — Featured Video' },
+    { embedId: 'vDkimmBktms', title: 'Yo Maps — Featured Video 2' },
+    { embedId: 'KjOBNrBEebI', title: 'Yo Maps — Featured Video 3' },
   ];
 
   return (
@@ -34,26 +62,22 @@ export function VideoSection() {
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-20">
           <span className="text-amber-400 tracking-widest uppercase text-sm mb-4 block">Watch</span>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 tracking-wide font-light">Music <span className="text-amber-400">Videos</span></h2>
+          <h2 className="text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 tracking-wide font-light">
+            Music <span className="text-amber-400">Videos</span>
+          </h2>
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">Watch the latest visuals from Yo Maps</p>
         </motion.div>
 
-        {/* Featured videos — 3 column grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto mb-10">
-          {featuredVideos.map((video, i) => (
-            <motion.div key={video.embedId} initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.15 }}
+          {videos.map((video, i) => (
+            <motion.div key={video.embedId}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.15 }}
               className="rounded-lg overflow-hidden border border-gray-800 hover:border-amber-400/40 transition-colors duration-300"
             >
-              <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  className="absolute inset-0 w-full h-full"
-                  src={`https://www.youtube.com/embed/${video.embedId}?rel=0&modestbranding=1`}
-                  title={video.title}
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                />
-              </div>
+              <YouTubeFacade embedId={video.embedId} title={video.title} />
             </motion.div>
           ))}
         </div>

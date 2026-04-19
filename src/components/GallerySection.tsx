@@ -32,7 +32,7 @@ export function GallerySection() {
             <motion.div key={index} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.04 }}
               className="group relative overflow-hidden rounded-lg aspect-square cursor-pointer"
             >
-              <img src={image.src} alt={image.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Expand className="text-amber-400" size={20} />
               </div>
@@ -46,7 +46,7 @@ export function GallerySection() {
             <motion.div key={index} initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: index * 0.06 }}
               className={`${image.span} group relative overflow-hidden rounded-lg cursor-pointer`}
             >
-              <img src={image.src} alt={image.alt} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+              <img src={image.src} alt={image.alt} loading="lazy" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <Expand className="text-amber-400" size={28} />
               </div>

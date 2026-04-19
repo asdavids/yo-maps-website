@@ -26,7 +26,7 @@ export function AboutSection() {
               <ImageWithFallback
                 src="/the_journey.JPG"
                 alt="The Journey of Yo Maps"
-                className="w-full h-full object-cover"
+                loading="lazy" className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>

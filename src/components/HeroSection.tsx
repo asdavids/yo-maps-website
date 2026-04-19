@@ -23,7 +23,7 @@ export function HeroSection() {
   return (
     <section id="home" className="relative w-full overflow-hidden" style={{ height: '100svh' }}>
       <div className="absolute inset-0">
-        <img src="/yo-maps-hero.png" alt="Yo Maps" className="w-full h-full object-cover object-right sm:object-center" />
+        <img src="/yo-maps-hero.jpg" alt="Yo Maps" className="w-full h-full object-cover object-right sm:object-center" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/90 sm:from-black/30 sm:via-transparent sm:to-black"></div>
       </div>
 
