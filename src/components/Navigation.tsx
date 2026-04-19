@@ -23,6 +23,7 @@ export function Navigation() {
     { name: 'Music', id: 'music' },
     { name: 'Tour', id: 'tour' },
     { name: 'Gallery', id: 'gallery' },
+    { name: 'Bookings', id: 'bookings' },
   ];
 
   return (
