@@ -3,7 +3,7 @@ import { Calendar, MapPin, Ticket } from 'lucide-react';
 
 export function TourSection() {
   const tourDates = [
-    { date: 'APR 18, 2026', venue: 'Kolwezi', city: 'Congo DRC 🇨🇩', status: 'On Sale' },
+    { date: 'APR 18, 2026', venue: 'Kolwezi', city: 'Congo DRC', status: 'On Sale' },
     { date: 'APR 25, 2026', venue: 'Livingstone', city: 'Zambia', status: 'On Sale' },
     { date: 'MAY 8, 2026', venue: 'Mufurila', city: 'Zambia', status: 'On Sale' },
     { date: 'MAY 9, 2026', venue: 'Solwezi', city: 'Zambia', status: 'On Sale' },
@@ -72,17 +72,12 @@ export function TourSection() {
                 </div>
                 <div className="md:col-span-2">
                   <motion.button
-                    whileHover={{ scale: show.status === 'Sold Out' ? 1 : 1.05 }}
+                    whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    disabled={show.status === 'Sold Out'}
-                    className={`w-full px-6 py-3 border flex items-center justify-center gap-2 transition-all duration-300 text-sm tracking-wider ${
-                      show.status === 'Sold Out'
-                        ? 'border-gray-700 text-gray-600 cursor-not-allowed'
-                        : 'border-amber-400 text-amber-400 hover:bg-amber-400 hover:text-black group-hover:shadow-lg group-hover:shadow-amber-400/30'
-                    }`}
+                    className="w-full px-6 py-3 border border-amber-400 text-amber-400 flex items-center justify-center gap-2 hover:bg-amber-400 hover:text-black transition-all duration-300 text-sm tracking-wider"
                   >
                     <Ticket size={15} />
-                    {show.status === 'Sold Out' ? 'SOLD OUT' : 'TICKETS'}
+                    TICKETS
                   </motion.button>
                 </div>
               </div>
@@ -100,12 +95,12 @@ export function TourSection() {
           <p className="text-gray-400 mb-6">
             For bookings and inquiries, contact Olios Records directly
           </p>
-          
-            href="mailto:oliosrecords2024@gmail.com"
-            className="px-8 py-3 bg-amber-400 text-black tracking-widest hover:bg-amber-500 transition-all duration-300 inline-block"
+          <button
+            onClick={() => window.location.href = 'mailto:oliosrecords2024@gmail.com'}
+            className="px-8 py-3 bg-amber-400 text-black tracking-widest hover:bg-amber-500 transition-all duration-300"
           >
             GET IN TOUCH
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>

@@ -62,7 +62,6 @@ export function MusicSection() {
           </p>
         </motion.div>
 
-        {/* New Album Banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -71,7 +70,7 @@ export function MusicSection() {
         >
           <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">New Album Dropping</span>
           <h3 className="text-3xl tracking-widest mb-1">VIBES ON VIBES</h3>
-          <p className="text-gray-400 text-sm">April 24, 2026 — 16 Tracks featuring Mafikizolo, Rotimi, Harmonize, Stonebwoy & more</p>
+          <p className="text-gray-400 text-sm">April 24, 2026 — 16 Tracks featuring Mafikizolo, Rotimi, Harmonize, Stonebwoy and more</p>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
@@ -100,7 +99,6 @@ export function MusicSection() {
                   </motion.button>
                 </div>
               </div>
-
               <div className="flex items-center gap-3 mb-2">
                 <Disc3 className="text-amber-400" size={18} />
                 <span className="text-gray-500 text-sm">{album.tracks} Tracks · {album.feat}</span>
@@ -146,14 +144,12 @@ export function MusicSection() {
           viewport={{ once: true }}
           className="text-center"
         >
-          
-            href="https://www.youtube.com/@YoMapsOfficial"
-            target="_blank"
-            rel="noreferrer"
-            className="px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-black tracking-widest hover:shadow-2xl hover:shadow-amber-400/40 transition-all duration-300 inline-block"
+          <button
+            onClick={() => window.open('https://www.youtube.com/@YoMapsOfficial', '_blank')}
+            className="px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-black tracking-widest hover:shadow-2xl hover:shadow-amber-400/40 transition-all duration-300"
           >
             VIEW ALL MUSIC
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>
