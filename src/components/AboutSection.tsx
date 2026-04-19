@@ -24,8 +24,8 @@ export function AboutSection() {
           >
             <div className="relative aspect-square rounded-lg overflow-hidden">
               <ImageWithFallback
-                src="https://images.unsplash.com/photo-1571974599782-87624638275e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-                alt="Yo Maps portrait"
+                src="/the_journey.JPG"
+                alt="The Journey of Yo Maps"
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
