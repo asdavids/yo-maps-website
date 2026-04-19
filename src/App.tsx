@@ -1,4 +1,5 @@
 import { Navigation } from './components/Navigation';
+import { SplashScreen } from './components/SplashScreen';
 import { AlbumCountdown } from './components/AlbumCountdown';
 import { HeroSection } from './components/HeroSection';
 import { AboutSection } from './components/AboutSection';
@@ -13,11 +14,12 @@ import { GallerySection } from './components/GallerySection';
 import { NewsletterSection } from './components/NewsletterSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { MiniPlayer } from './components/MiniPlayer';
 
-// Yo Maps — Official Website
 export default function App() {
   return (
     <div className="bg-black text-white overflow-x-hidden">
+      <SplashScreen />
       <Navigation />
       <AlbumCountdown />
       <HeroSection />
@@ -33,6 +35,7 @@ export default function App() {
       <NewsletterSection />
       <Footer />
       <FloatingWhatsApp />
+      <MiniPlayer />
     </div>
   );
 }
