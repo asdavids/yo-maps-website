@@ -44,7 +44,7 @@ export function AlbumCountdown() {
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="bg-black border-t border-b border-amber-400/20 py-4 sm:py-5 px-4"
+      className="bg-black border-b border-amber-400/20 pt-16 sm:pt-20 pb-4 sm:pb-5 px-4"
     >
       <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-8">
         <div className="text-center sm:text-left">
