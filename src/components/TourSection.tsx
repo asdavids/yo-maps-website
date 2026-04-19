@@ -3,11 +3,13 @@ import { Calendar, MapPin, Ticket } from 'lucide-react';
 
 export function TourSection() {
   const tourDates = [
-    { date: 'MAY 24, 2025', venue: 'Hero\'s Stadium', city: 'Lusaka, Zambia', status: 'On Sale' },
-    { date: 'JUN 07, 2025', venue: 'Copperbelt Stadium', city: 'Ndola, Zambia', status: 'On Sale' },
-    { date: 'JUL 12, 2025', venue: 'Joburg Arena', city: 'Johannesburg, SA', status: 'Few Tickets' },
-    { date: 'AUG 30, 2025', venue: 'O2 Academy Brixton', city: 'London, UK', status: 'Sold Out' },
-    { date: 'SEP 14, 2025', venue: 'KICC Grounds', city: 'Nairobi, Kenya', status: 'On Sale' },
+    { date: 'APR 18, 2026', venue: 'Kolwezi', city: 'Congo DRC 🇨🇩', status: 'On Sale' },
+    { date: 'APR 25, 2026', venue: 'Livingstone', city: 'Zambia', status: 'On Sale' },
+    { date: 'MAY 8, 2026', venue: 'Mufurila', city: 'Zambia', status: 'On Sale' },
+    { date: 'MAY 9, 2026', venue: 'Solwezi', city: 'Zambia', status: 'On Sale' },
+    { date: 'MAY 23, 2026', venue: 'Lusaka', city: 'Zambia', status: 'On Sale' },
+    { date: 'MAY 29, 2026', venue: 'Nakonde', city: 'Zambia', status: 'On Sale' },
+    { date: 'MAY 30, 2026', venue: 'Kasama', city: 'Zambia', status: 'On Sale' },
   ];
 
   const statusStyle = (status: string) => {
@@ -31,10 +33,13 @@ export function TourSection() {
             Live Performances
           </span>
           <h2 className="text-5xl md:text-6xl mb-6 tracking-wide font-light">
-            2025 Tour Dates
+            2026 Tour Dates
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            Experience Yo Maps live — from Lusaka to London, the energy is unmatched
+            Experience Yo Maps live — the energy is unmatched
+          </p>
+          <p className="text-gray-500 text-sm mt-4">
+            For bookings: <span className="text-amber-400">+260972722878</span> // <span className="text-amber-400">oliosrecords2024@gmail.com</span>
           </p>
         </motion.div>
 
@@ -85,20 +90,22 @@ export function TourSection() {
           ))}
         </div>
 
-        {/* VIP */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           className="mt-20 max-w-3xl mx-auto text-center p-8 border border-amber-400/25 rounded-lg bg-gradient-to-br from-amber-400/5 to-transparent"
         >
-          <h3 className="text-2xl mb-4 tracking-wide">VIP Experience Package</h3>
+          <h3 className="text-2xl mb-4 tracking-wide">Book Yo Maps</h3>
           <p className="text-gray-400 mb-6">
-            Exclusive meet &amp; greet, premium seating, and signed merchandise — an unforgettable night with Yo Maps
+            For bookings and inquiries, contact Olios Records directly
           </p>
-          <button className="px-8 py-3 bg-amber-400 text-black tracking-widest hover:bg-amber-500 transition-all duration-300">
-            LEARN MORE
-          </button>
+          
+            href="mailto:oliosrecords2024@gmail.com"
+            className="px-8 py-3 bg-amber-400 text-black tracking-widest hover:bg-amber-500 transition-all duration-300 inline-block"
+          >
+            GET IN TOUCH
+          </a>
         </motion.div>
       </div>
     </section>

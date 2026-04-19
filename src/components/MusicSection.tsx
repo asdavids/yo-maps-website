@@ -5,34 +5,34 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 export function MusicSection() {
   const albums = [
     {
-      title: 'WALILOWELA',
-      year: '2023',
+      title: 'VIBES ON VIBES',
+      year: '2026',
       image: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      tracks: 13,
-      feat: 'feat. Chef 187',
+      tracks: 16,
+      feat: 'New Album · Apr 24, 2026',
     },
     {
-      title: 'FINALLY',
+      title: 'KOMANDO',
       year: '2022',
       image: 'https://images.unsplash.com/photo-1644855640845-ab57a047320e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
       tracks: 12,
-      feat: 'Full Album',
+      feat: 'Album of the Year 2022',
     },
     {
-      title: 'ICHALO',
-      year: '2020',
+      title: 'FINALLY',
+      year: '2018',
       image: 'https://images.unsplash.com/photo-1598488035252-042a85bc8e5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
-      tracks: 15,
-      feat: 'Full Album',
+      tracks: 10,
+      feat: 'Breakthrough Album',
     },
   ];
 
   const topTracks = [
-    { no: '01', title: 'Walilowela', feat: 'feat. Chef 187', duration: '3:47' },
-    { no: '02', title: 'Finally', feat: 'Yo Maps', duration: '4:12' },
-    { no: '03', title: 'Ichalo', feat: 'Yo Maps', duration: '3:58' },
-    { no: '04', title: 'Naomba', feat: 'feat. Slapdee', duration: '4:05' },
-    { no: '05', title: 'Kaya', feat: 'Yo Maps', duration: '3:33' },
+    { no: '01', title: 'Mr & Mrs', feat: 'Yo Maps', duration: '4:10' },
+    { no: '02', title: 'Finally', feat: 'feat. Macky 2', duration: '4:12' },
+    { no: '03', title: 'So Mone', feat: 'feat. Tay Grin', duration: '3:47' },
+    { no: '04', title: 'Try Again', feat: 'feat. Abel Chungu', duration: '3:55' },
+    { no: '05', title: 'Confirmation', feat: 'feat. Iyanya', duration: '4:05' },
   ];
 
   return (
@@ -45,7 +45,6 @@ export function MusicSection() {
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,11 +58,22 @@ export function MusicSection() {
             Latest Releases
           </h2>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A decade of authentic Zambian sound — from love ballads to afro-pop anthems
+            From "Finally" to "Vibes on Vibes" — authentic Zambian sound across Africa and beyond
           </p>
         </motion.div>
 
-        {/* Albums Grid */}
+        {/* New Album Banner */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-3xl mx-auto mb-16 p-6 border border-amber-400/40 rounded-lg bg-gradient-to-r from-amber-400/10 to-transparent text-center"
+        >
+          <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">New Album Dropping</span>
+          <h3 className="text-3xl tracking-widest mb-1">VIBES ON VIBES</h3>
+          <p className="text-gray-400 text-sm">April 24, 2026 — 16 Tracks featuring Mafikizolo, Rotimi, Harmonize, Stonebwoy & more</p>
+        </motion.div>
+
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
           {albums.map((album, index) => (
             <motion.div
@@ -89,7 +99,6 @@ export function MusicSection() {
                     <Play size={24} fill="currentColor" />
                   </motion.button>
                 </div>
-                <div className="absolute top-0 right-0 w-16 h-16 border-t-2 border-r-2 border-amber-400/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </div>
 
               <div className="flex items-center gap-3 mb-2">
@@ -102,7 +111,6 @@ export function MusicSection() {
           ))}
         </div>
 
-        {/* Top Tracks */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -132,16 +140,20 @@ export function MusicSection() {
           ))}
         </motion.div>
 
-        {/* CTA */}
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           className="text-center"
         >
-          <button className="px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-black tracking-widest hover:shadow-2xl hover:shadow-amber-400/40 transition-all duration-300">
+          
+            href="https://www.youtube.com/@YoMapsOfficial"
+            target="_blank"
+            rel="noreferrer"
+            className="px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-black tracking-widest hover:shadow-2xl hover:shadow-amber-400/40 transition-all duration-300 inline-block"
+          >
             VIEW ALL MUSIC
-          </button>
+          </a>
         </motion.div>
       </div>
     </section>

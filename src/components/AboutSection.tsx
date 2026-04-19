@@ -4,9 +4,9 @@ import { Award, Users, Music } from 'lucide-react';
 
 export function AboutSection() {
   const stats = [
-    { icon: Music, value: '50M+', label: 'Streams' },
-    { icon: Award, value: '12+', label: 'Awards' },
-    { icon: Users, value: '1M+', label: 'Fans' },
+    { icon: Music, value: '250M+', label: 'Streams' },
+    { icon: Award, value: '10+', label: 'Awards' },
+    { icon: Users, value: '5M+', label: 'Fans' },
   ];
 
   return (
@@ -15,7 +15,6 @@ export function AboutSection() {
 
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -34,7 +33,6 @@ export function AboutSection() {
             <div className="absolute -bottom-6 -right-6 w-2/3 h-2/3 border-2 border-amber-400/30 rounded-lg -z-10"></div>
           </motion.div>
 
-          {/* Content */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -51,16 +49,11 @@ export function AboutSection() {
             </h2>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-6">
-              Born Martin Musonda Jr. in Lusaka, Zambia, Yo Maps emerged as one of the
-              country's most celebrated artists. With a voice that moves the soul and
-              lyrics that speak the language of love, he became a defining sound of
-              modern Zambian music.
+              Born Elton Mulenga on November 29, 1994, in Kasama, Zambia, Yo Maps grew up on the Copperbelt and later moved to Kabwe where his music career began. With a golden voice and deeply emotional lyrics, he became the defining sound of modern Zambian music.
             </p>
 
             <p className="text-gray-400 text-lg leading-relaxed mb-8">
-              From intimate studio sessions to packed concert arenas across Africa and
-              beyond, his journey is one of passion, perseverance, and purpose. Multiple
-              Kwacha Award winner. Every song is a story — and every story is real.
+              He launched his career in 2016 with "Njikata Kuboko" and broke through nationally in 2018 with the smash hit "Finally" featuring Macky 2. Since then he has won multiple Ngoma Awards including Song of the Year, Outstanding Musician of the Year, and Album of the Year — and is widely regarded as the most booked artist in Zambia.
             </p>
 
             <div className="grid grid-cols-3 gap-6 mt-12">
