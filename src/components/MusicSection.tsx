@@ -189,7 +189,7 @@ export function MusicSection() {
           className="text-center"
         >
           <button
-            onClick={() => window.open('https://www.youtube.com/@YoMapsOfficial', '_blank')}
+            onClick={() => window.open('https://youtube.com/@yomapsyo3164?si=B_iSsVUo0O_8ScfL', '_blank')}
             className="px-10 py-4 bg-gradient-to-r from-amber-400 to-amber-500 text-black tracking-widest hover:shadow-2xl hover:shadow-amber-400/40 transition-all duration-300"
           >
             VIEW ALL MUSIC
