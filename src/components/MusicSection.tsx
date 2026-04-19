@@ -31,11 +31,11 @@ export function MusicSection() {
   ];
 
   const topTracks = [
-    { no: '01', title: 'Mr & Mrs', feat: 'Yo Maps', duration: '4:10' },
-    { no: '02', title: 'Finally', feat: 'feat. Macky 2', duration: '4:12' },
-    { no: '03', title: 'So Mone', feat: 'feat. Tay Grin', duration: '3:47' },
-    { no: '04', title: 'Try Again', feat: 'feat. Abel Chungu', duration: '3:55' },
-    { no: '05', title: 'Confirmation', feat: 'feat. Iyanya', duration: '4:05' },
+    { no: '01', title: 'So Mone', feat: 'feat. Tay Grin', youtube: 'https://youtu.be/Cu7UZWeRccc?si=kD8W_Pg9eBvf7Zt0' },
+    { no: '02', title: 'Try Again', feat: 'feat. Abel Chungu', youtube: 'https://youtu.be/q_3qGYZotyM?si=qDVZoDQw4cXId_63' },
+    { no: '03', title: 'Confirmation', feat: 'feat. Iyanya', youtube: 'https://youtu.be/katIossPWoo?si=pKvi__8JzXsO3l76' },
+    { no: '04', title: 'Mr & Mrs', feat: 'Yo Maps', youtube: 'https://youtu.be/O_N7NhDjSAw?si=BcrWsbcuRFaNmuNu' },
+    { no: '05', title: 'Pick It Up', feat: 'Yo Maps', youtube: 'https://youtu.be/yhdi24skNV8?si=wnglN6HJbVjTg44R' },
   ];
 
   return (
@@ -179,8 +179,11 @@ export function MusicSection() {
             Top Tracks
           </h3>
           {topTracks.map((track, index) => (
-            <motion.div
+            <motion.a
               key={track.title}
+              href={track.youtube}
+              target="_blank"
+              rel="noreferrer"
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
@@ -192,9 +195,11 @@ export function MusicSection() {
                 <div className="font-medium group-hover:text-amber-400 transition-colors">{track.title}</div>
                 <div className="text-gray-500 text-xs mt-0.5">{track.feat}</div>
               </div>
-              <span className="text-gray-500 text-sm">{track.duration}</span>
-              <Play size={14} className="text-gray-600 group-hover:text-amber-400 transition-colors opacity-0 group-hover:opacity-100" />
-            </motion.div>
+              <div className="flex items-center gap-2 text-gray-600 group-hover:text-red-500 transition-colors">
+                <img src="/youtube-icon.png" alt="YouTube" className="w-4 h-4 object-contain opacity-40 group-hover:opacity-100 transition-opacity" />
+                <span className="text-xs tracking-wider opacity-0 group-hover:opacity-100 transition-opacity">Watch</span>
+              </div>
+            </motion.a>
           ))}
         </motion.div>
 
