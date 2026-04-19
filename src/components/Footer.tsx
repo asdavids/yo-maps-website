@@ -72,7 +72,7 @@ export function Footer() {
           <div>
             <h3 className="text-amber-400 tracking-widest uppercase text-sm mb-4">Yo Maps</h3>
             <p className="text-gray-500 text-sm leading-relaxed">
-              Elton Mulenga — Zambia's most celebrated artist. Afro Pop, Afro Soul, R&B and Zam Rock.
+              Zambia's most celebrated artist. Afro Pop, Afro Soul, R&B and Zam Rock.
             </p>
           </div>
           <div>
