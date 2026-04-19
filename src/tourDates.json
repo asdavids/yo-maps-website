@@ -1,0 +1,9 @@
+[
+  { "date": "APR 18, 2026", "venue": "Kolwezi", "city": "Congo DRC", "status": "On Sale" },
+  { "date": "APR 25, 2026", "venue": "Livingstone", "city": "Zambia", "status": "On Sale" },
+  { "date": "MAY 8, 2026", "venue": "Mufurila", "city": "Zambia", "status": "On Sale" },
+  { "date": "MAY 9, 2026", "venue": "Solwezi", "city": "Zambia", "status": "On Sale" },
+  { "date": "MAY 23, 2026", "venue": "Lusaka", "city": "Zambia", "status": "On Sale" },
+  { "date": "MAY 29, 2026", "venue": "Nakonde", "city": "Zambia", "status": "On Sale" },
+  { "date": "MAY 30, 2026", "venue": "Kasama", "city": "Zambia", "status": "On Sale" }
+]

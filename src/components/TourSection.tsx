@@ -1,16 +1,19 @@
 import { motion } from 'motion/react';
 import { Calendar, MapPin, Ticket } from 'lucide-react';
+import defaultDates from '../tourDates.json';
+
+const STORAGE_KEY = 'yomaps_tour_dates';
+
+function getTourdates() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY);
+    if (saved) return JSON.parse(saved);
+  } catch {}
+  return defaultDates;
+}
 
 export function TourSection() {
-  const tourDates = [
-    { date: 'APR 18, 2026', venue: 'Kolwezi', city: 'Congo DRC', status: 'On Sale' },
-    { date: 'APR 25, 2026', venue: 'Livingstone', city: 'Zambia', status: 'On Sale' },
-    { date: 'MAY 8, 2026', venue: 'Mufurila', city: 'Zambia', status: 'On Sale' },
-    { date: 'MAY 9, 2026', venue: 'Solwezi', city: 'Zambia', status: 'On Sale' },
-    { date: 'MAY 23, 2026', venue: 'Lusaka', city: 'Zambia', status: 'On Sale' },
-    { date: 'MAY 29, 2026', venue: 'Nakonde', city: 'Zambia', status: 'On Sale' },
-    { date: 'MAY 30, 2026', venue: 'Kasama', city: 'Zambia', status: 'On Sale' },
-  ];
+  const tourDates = getTourdates();
 
   const statusStyle = (status: string) => {
     if (status === 'Sold Out') return 'bg-gray-500/20 text-gray-400';
