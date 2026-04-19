@@ -49,14 +49,14 @@ export function HeroSection() {
         />
       </div>
 
-      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
+      <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10 pt-24">
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: 'backOut' }}
           className="mb-6"
         >
-          <img src="/yo-maps-logo.png" alt="Yo Maps" className="w-48 md:w-64 mx-auto" />
+          <img src="/yo-maps-logo.png" alt="Yo Maps" className="w-28 md:w-36 mx-auto" />
         </motion.div>
 
         <motion.p
