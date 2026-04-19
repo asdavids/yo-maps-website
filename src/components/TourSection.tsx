@@ -71,14 +71,16 @@ export function TourSection() {
                   </span>
                 </div>
                 <div className="md:col-span-2">
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="w-full px-6 py-3 border border-amber-400 text-amber-400 flex items-center justify-center gap-2 hover:bg-amber-400 hover:text-black transition-all duration-300 text-sm tracking-wider"
-                  >
-                    <Ticket size={15} />
-                    TICKETS
-                  </motion.button>
+                  <a href="https://wa.me/260972722878" target="_blank" rel="noreferrer">
+                    <motion.div
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="w-full px-6 py-3 border border-amber-400 text-amber-400 flex items-center justify-center gap-2 hover:bg-amber-400 hover:text-black transition-all duration-300 text-sm tracking-wider cursor-pointer"
+                    >
+                      <Ticket size={15} />
+                      TICKETS
+                    </motion.div>
+                  </a>
                 </div>
               </div>
             </motion.div>
