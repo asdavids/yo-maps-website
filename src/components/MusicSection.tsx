@@ -19,7 +19,7 @@ export function MusicSection() {
 
   const tracklist = [
     { no: '01', title: 'NEGATIVE ENERGY', prod: 'PROD BY KINGTEC & C-MARK' },
-    { no: '02', title: 'BUDGET', feat: 'ft. FRANK RO, DIZMO & KINGTEC', prod: 'PROD BY KINGTEC' },
+    { no: '02', title: 'BUDGET', feat: 'ft. FRANK RO, DIZMO & KINGTEC', prod: 'PROD BY KINGTEC', spotify: 'https://open.spotify.com/album/3xnajWQpdA4t1wO80Mu7K2?si=SWxJyJtFRkeqaz4OrFDTrw' },
     { no: '03', title: 'MY DARLING', feat: 'ft. MAFIKIZOLO', prod: 'PROD BY DJ MEGI' },
     { no: '04', title: 'HELLO', prod: 'PROD BY KINGTEC & C-MARK' },
     { no: '05', title: 'TOUCH ME', feat: 'ft. ROTIMI', prod: 'PROD BY KINGTEC' },
@@ -67,9 +67,23 @@ export function MusicSection() {
                 {tracklist.map((track) => (
                   <div key={track.no} className="flex items-start gap-2 py-1 border-b border-gray-800/60 group">
                     <span className="text-amber-400/60 text-xs w-5 flex-shrink-0 mt-0.5">{track.no}</span>
-                    <div className="min-w-0">
-                      <div className="text-xs sm:text-sm font-medium tracking-wide truncate group-hover:text-amber-400 transition-colors">{track.title}</div>
-                      {track.feat && <div className="text-gray-500 text-[10px]">{track.feat}</div>}
+                    <div className="min-w-0 flex-1">
+                      <div className="flex items-center gap-1.5">
+                        <div className="text-xs sm:text-sm font-medium tracking-wide truncate group-hover:text-amber-400 transition-colors">{track.title}</div>
+                        {(track as any).spotify && (
+                          <a
+                            href={(track as any).spotify}
+                            target="_blank"
+                            rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
+                            title="Stream on Spotify"
+                            className="flex-shrink-0 opacity-60 hover:opacity-100 transition-opacity"
+                          >
+                            <img src="/spotify-icon.png" alt="Spotify" className="w-3 h-3 object-contain" />
+                          </a>
+                        )}
+                      </div>
+                      {(track as any).feat && <div className="text-gray-500 text-[10px]">{(track as any).feat}</div>}
                       <div className="text-gray-600 text-[9px] leading-tight">{track.prod}</div>
                     </div>
                   </div>
