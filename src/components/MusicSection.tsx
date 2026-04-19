@@ -19,7 +19,7 @@ export function MusicSection() {
 
   const tracklist = [
     { no: '01', title: 'NEGATIVE ENERGY', prod: 'PROD BY KINGTEC & C-MARK' },
-    { no: '02', title: 'BUDGET', feat: 'ft. FRANK RO, DIZMO & KINGTEC', prod: 'PROD BY KINGTEC', spotify: 'https://open.spotify.com/album/3xnajWQpdA4t1wO80Mu7K2?si=SWxJyJtFRkeqaz4OrFDTrw' },
+    { no: '02', title: 'BUDGET', feat: 'ft. FRANK RO, DIZMO & KINGTEC', prod: 'PROD BY KINGTEC', spotify: 'https://open.spotify.com/track/1ulPW7cmYv1dpZeYIVqJo5?si=HXrMHkjmRS6qyvL9q9Nhqw' },
     { no: '03', title: 'MY DARLING', feat: 'ft. MAFIKIZOLO', prod: 'PROD BY DJ MEGI' },
     { no: '04', title: 'HELLO', prod: 'PROD BY KINGTEC & C-MARK' },
     { no: '05', title: 'TOUCH ME', feat: 'ft. ROTIMI', prod: 'PROD BY KINGTEC' },
