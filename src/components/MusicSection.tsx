@@ -10,6 +10,7 @@ export function MusicSection() {
       image: '/yo-maps-album.JPG',
       tracks: 16,
       feat: 'New Album · Apr 24, 2026',
+      spotify: 'https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw',
     },
     {
       title: 'KOMANDO',
@@ -17,14 +18,15 @@ export function MusicSection() {
       image: '/komando.JPG',
       tracks: 12,
       feat: 'Album of the Year 2022',
+      spotify: 'https://open.spotify.com/album/1CWwQnaXuorrvpXaaHoAPQ?si=6PvzthX9SkmdYfNN1fjnDw',
     },
-
     {
-      title: 'FINALLY',
-      year: '2018',
-      image: '/finally.JPG',
-      tracks: 10,
-      feat: 'Breakthrough Album',
+      title: 'TRY AGAIN',
+      year: '2020',
+      image: '/try-again.jpg',
+      tracks: 12,
+      feat: 'Fan Favourite',
+      spotify: 'https://open.spotify.com/album/4ntGqV2N4yix29JNEXEoCg?si=JRjiWyxPSzmjAPLKHo5KzA',
     },
   ];
 
@@ -134,14 +136,27 @@ export function MusicSection() {
                   alt={album.title}
                   className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                 />
-                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center gap-3">
                   <motion.button
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.9 }}
                     className="w-16 h-16 rounded-full bg-amber-400 flex items-center justify-center text-black"
+                    onClick={() => document.getElementById('music')?.scrollIntoView({ behavior: 'smooth' })}
                   >
                     <Play size={24} fill="currentColor" />
                   </motion.button>
+                  {album.spotify && (
+                    <a
+                      href={album.spotify}
+                      target="_blank"
+                      rel="noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="flex items-center gap-2 px-3 py-1.5 bg-black/60 rounded-full hover:bg-black/80 transition-colors"
+                    >
+                      <img src="/spotify-icon.png" alt="Spotify" className="w-4 h-4" />
+                      <span className="text-white text-xs tracking-wider">Stream</span>
+                    </a>
+                  )}
                 </div>
               </div>
               <div className="flex items-center gap-3 mb-2">
