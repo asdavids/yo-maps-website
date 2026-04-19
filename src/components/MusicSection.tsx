@@ -7,7 +7,7 @@ export function MusicSection() {
     {
       title: 'VIBES ON VIBES',
       year: '2026',
-      image: '/yo-maps-album.jpg',
+      image: '/yo-maps-album.JPG',
       tracks: 16,
       feat: 'New Album · Apr 24, 2026',
     },
@@ -66,11 +66,55 @@ export function MusicSection() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-3xl mx-auto mb-16 p-6 border border-amber-400/40 rounded-lg bg-gradient-to-r from-amber-400/10 to-transparent text-center"
+          className="max-w-5xl mx-auto mb-16 border border-amber-400/40 rounded-lg bg-gradient-to-br from-amber-400/10 to-transparent overflow-hidden"
         >
-          <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">New Album Dropping</span>
-          <h3 className="text-3xl tracking-widest mb-1">VIBES ON VIBES</h3>
-          <p className="text-gray-400 text-sm">April 24, 2026 — 16 Tracks featuring Mafikizolo, Rotimi, Harmonize, Stonebwoy and more</p>
+          <div className="flex flex-col md:flex-row">
+            {/* Album Cover */}
+            <div className="md:w-72 lg:w-80 flex-shrink-0">
+              <img
+                src="/yo-maps-album.JPG"
+                alt="Vibes on Vibes Album Cover"
+                className="w-full h-full object-cover"
+              />
+            </div>
+
+            {/* Tracklist */}
+            <div className="flex-1 p-6 md:p-8">
+              <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">New Album Dropping</span>
+              <h3 className="text-3xl tracking-widest mb-1">VIBES ON VIBES</h3>
+              <p className="text-gray-400 text-sm mb-6">April 24, 2026 · 16 Tracks</p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+                {[
+                  { no: '01', title: 'NEGATIVE ENERGY', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '02', title: 'BUDGET', feat: 'ft. FRANK RO, DIZMO & KINGTEC', prod: 'PROD BY KINGTEC' },
+                  { no: '03', title: 'MY DARLING', feat: 'ft. MAFIKIZOLO', prod: 'PROD BY DJ MEGI' },
+                  { no: '04', title: 'HELLO', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '05', title: 'TOUCH ME', feat: 'ft. ROTIMI', prod: 'PROD BY KINGTEC' },
+                  { no: '06', title: 'SANITY', feat: 'ft. INNOS B', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '07', title: 'BAE BAE', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '08', title: 'CONDOM', feat: 'ft. BOBBY EAST', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '09', title: 'AM BEGGING', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '10', title: 'MOSES', feat: 'ft. HARMONIZE', prod: 'PROD BY KINGTEC' },
+                  { no: '11', title: 'CHAFINA', feat: 'ft. MUZO ALPHONSO', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '12', title: "IT'S OVER", feat: 'ft. MAKHADZI', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '13', title: 'IF YOU LIKE', feat: 'ft. DIGO', prod: 'PROD BY KINGTEC' },
+                  { no: '14', title: 'CHARLEH', feat: 'ft. STONEBWOY (REMIX)', prod: 'PROD BY KINGTEC & C-MARK' },
+                  { no: '15', title: '50 DEEP', prod: 'PROD BY KINGTEC' },
+                  { no: '16', title: 'MIRACLE', prod: 'PROD BY JAZZY BOY & C-MARK · MIXED & MASTERED BY KINGTEC' },
+                ].map((track) => (
+                  <div key={track.no} className="flex items-start gap-3 py-1.5 border-b border-gray-800/60 group">
+                    <span className="text-amber-400/60 text-xs w-5 flex-shrink-0 mt-0.5">{track.no}</span>
+                    <div className="min-w-0">
+                      <div className="text-sm font-medium tracking-wide truncate group-hover:text-amber-400 transition-colors">{track.title}</div>
+                      {track.feat && <div className="text-gray-500 text-xs">{track.feat}</div>}
+                      <div className="text-gray-600 text-[10px] leading-tight">{track.prod}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
