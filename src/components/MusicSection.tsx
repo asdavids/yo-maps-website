@@ -14,14 +14,21 @@ export function MusicSection() {
     {
       title: 'KOMANDO',
       year: '2022',
-      image: 'https://images.unsplash.com/photo-1644855640845-ab57a047320e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+      image: '/komando.JPG',
       tracks: 12,
       feat: 'Album of the Year 2022',
     },
     {
+      title: 'THE JOURNEY',
+      year: '2021',
+      image: '/the_journey.JPG',
+      tracks: 14,
+      feat: 'Platinum Album',
+    },
+    {
       title: 'FINALLY',
       year: '2018',
-      image: 'https://images.unsplash.com/photo-1598488035252-042a85bc8e5a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600',
+      image: '/finally.JPG',
       tracks: 10,
       feat: 'Breakthrough Album',
     },
@@ -117,7 +124,7 @@ export function MusicSection() {
           </div>
         </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {albums.map((album, index) => (
             <motion.div
               key={album.title}
