@@ -21,6 +21,8 @@ export function Navigation() {
     { name: 'Home', id: 'home' },
     { name: 'About', id: 'about' },
     { name: 'Music', id: 'music' },
+    { name: 'Videos', id: 'videos' },
+    { name: 'Awards', id: 'awards' },
     { name: 'Tour', id: 'tour' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Bookings', id: 'bookings' },
