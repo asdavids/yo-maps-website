@@ -36,13 +36,15 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-row gap-3 mb-6 sm:mb-8"
           >
-            <button
+            <a
+              href="https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw"
+              target="_blank"
+              rel="noreferrer"
               className="flex-1 sm:flex-none px-5 py-3 sm:px-8 sm:py-4 bg-amber-400 text-black tracking-wider hover:bg-amber-500 transition-all duration-300 flex items-center gap-2 justify-center font-medium text-sm"
-              onClick={() => document.getElementById('music')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Play size={15} fill="currentColor" />
               LISTEN NOW
-            </button>
+            </a>
             <button
               className="flex-1 sm:flex-none px-5 py-3 sm:px-8 sm:py-4 border-2 border-white text-white tracking-wider hover:bg-white hover:text-black transition-all duration-300 text-sm"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
