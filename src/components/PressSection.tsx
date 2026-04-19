@@ -1,4 +1,5 @@
 import { motion } from 'motion/react';
+import { PressKitDownload } from './PressKitDownload';
 
 export function PressSection() {
   const quotes = [
@@ -80,6 +81,8 @@ export function PressSection() {
             ))}
           </div>
         </motion.div>
+
+        <PressKitDownload />
       </div>
     </section>
   );

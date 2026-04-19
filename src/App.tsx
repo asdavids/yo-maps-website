@@ -6,8 +6,11 @@ import { MusicSection } from './components/MusicSection';
 import { VideoSection } from './components/VideoSection';
 import { AwardsSection } from './components/AwardsSection';
 import { PressSection } from './components/PressSection';
+import { InstagramSection } from './components/InstagramSection';
 import { TourSection } from './components/TourSection';
+import { TourMapSection } from './components/TourMapSection';
 import { GallerySection } from './components/GallerySection';
+import { NewsletterSection } from './components/NewsletterSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
@@ -23,8 +26,11 @@ export default function App() {
       <VideoSection />
       <AwardsSection />
       <PressSection />
+      <InstagramSection />
       <TourSection />
+      <TourMapSection />
       <GallerySection />
+      <NewsletterSection />
       <Footer />
       <FloatingWhatsApp />
     </div>

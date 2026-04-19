@@ -1,0 +1,76 @@
+import { motion } from 'motion/react';
+import { MapPin, Calendar } from 'lucide-react';
+
+export function TourMapSection() {
+  const venues = [
+    { city: 'Kolwezi', country: 'Congo DRC', date: 'Apr 18, 2026', coords: { top: '52%', left: '45%' } },
+    { city: 'Livingstone', country: 'Zambia', date: 'Apr 25, 2026', coords: { top: '72%', left: '52%' } },
+    { city: 'Mufurila', country: 'Zambia', date: 'May 8, 2026', coords: { top: '55%', left: '54%' } },
+    { city: 'Solwezi', country: 'Zambia', date: 'May 9, 2026', coords: { top: '50%', left: '48%' } },
+    { city: 'Lusaka', country: 'Zambia', date: 'May 23, 2026', coords: { top: '63%', left: '56%' } },
+    { city: 'Nakonde', country: 'Zambia', date: 'May 29, 2026', coords: { top: '43%', left: '60%' } },
+    { city: 'Kasama', country: 'Zambia', date: 'May 30, 2026', coords: { top: '47%', left: '59%' } },
+  ];
+
+  return (
+    <section className="py-16 sm:py-24 bg-black relative overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-10 sm:mb-16">
+          <span className="text-amber-400 tracking-widest uppercase text-sm mb-4 block">Where to Find Him</span>
+          <h2 className="text-3xl sm:text-4xl font-light tracking-wide mb-3">
+            Tour <span className="text-amber-400">Map</span>
+          </h2>
+          <p className="text-gray-400 text-sm sm:text-base">2026 live performance locations</p>
+        </motion.div>
+
+        <div className="max-w-4xl mx-auto">
+          {/* Stylised map with pins */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true }}
+            className="relative w-full rounded-lg overflow-hidden border border-gray-800 mb-10"
+            style={{ paddingBottom: '60%' }}
+          >
+            {/* Map background — OpenStreetMap embed centred on Zambia */}
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=21.999%2C-18.1%2C33.701%2C-7.5&amp;layer=mapnik&amp;marker=-13.5%2C28.0"
+              style={{ filter: 'grayscale(80%) contrast(1.1) brightness(0.85)' }}
+              title="Yo Maps 2026 Tour Map"
+              loading="lazy"
+            />
+            {/* Gold overlay tint */}
+            <div className="absolute inset-0 bg-amber-400/5 pointer-events-none"></div>
+          </motion.div>
+
+          {/* City list */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            {venues.map((venue, i) => (
+              <motion.a
+                key={venue.city}
+                href={`https://www.google.com/maps/search/${encodeURIComponent(venue.city + ' ' + venue.country)}`}
+                target="_blank"
+                rel="noreferrer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.08 }}
+                className="flex items-start gap-3 p-3 sm:p-4 border border-gray-800 hover:border-amber-400/50 rounded-lg transition-colors duration-300 group"
+              >
+                <MapPin className="text-amber-400 flex-shrink-0 mt-0.5 group-hover:scale-110 transition-transform" size={16} />
+                <div className="min-w-0">
+                  <div className="font-medium text-sm group-hover:text-amber-400 transition-colors">{venue.city}</div>
+                  <div className="text-gray-500 text-xs">{venue.country}</div>
+                  <div className="flex items-center gap-1 text-gray-600 text-xs mt-1">
+                    <Calendar size={10} />{venue.date}
+                  </div>
+                </div>
+              </motion.a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
