@@ -1,21 +1,18 @@
 import { motion } from 'motion/react';
 import { Play, Music2 } from 'lucide-react';
-import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function HeroSection() {
   return (
     <section id="home" className="relative h-screen w-full overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
-        <ImageWithFallback
-          src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1080"
-          alt="Yo Maps performing live"
+        <img
+          src="/yo-maps-hero.jpg"
+          alt="Yo Maps"
           className="w-full h-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black"></div>
       </div>
 
-      {/* Animated glows */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           animate={{ scale: [1, 1.2, 1], opacity: [0.1, 0.25, 0.1] }}
@@ -29,7 +26,6 @@ export function HeroSection() {
         />
       </div>
 
-      {/* Content */}
       <div className="relative h-full flex flex-col items-center justify-center text-center px-6 z-10">
         <motion.div
           initial={{ scale: 0 }}
@@ -88,7 +84,6 @@ export function HeroSection() {
           </button>
         </motion.div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
