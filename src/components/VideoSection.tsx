@@ -50,6 +50,7 @@ function YouTubeFacade({ embedId, title }: { embedId: string; title: string }) {
 
 export function VideoSection() {
   const videos = [
+    { embedId: 'd1zKK1K2p6M', title: 'Budget ft. Frank Ro, Dizmo & Kingtec' },
     { embedId: 'yACnOHr5L4Y', title: 'Yo Maps — Featured Video' },
     { embedId: 'vDkimmBktms', title: 'Yo Maps — Featured Video 2' },
     { embedId: 'KjOBNrBEebI', title: 'Yo Maps — Featured Video 3' },
@@ -60,7 +61,7 @@ export function VideoSection() {
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400 to-transparent"></div>
 
       <div className="container mx-auto px-4 sm:px-6 relative z-10">
-        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-20">
+        <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-12 sm:mb-16">
           <span className="text-amber-400 tracking-widest uppercase text-sm mb-4 block">Watch</span>
           <h2 className="text-3xl sm:text-5xl md:text-6xl mb-4 sm:mb-6 tracking-wide font-light">
             Music <span className="text-amber-400">Videos</span>
@@ -68,7 +69,55 @@ export function VideoSection() {
           <p className="text-gray-400 text-base sm:text-lg max-w-2xl mx-auto">Watch the latest visuals from Yo Maps</p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 max-w-6xl mx-auto mb-10">
+        {/* Budget — Featured Single */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="max-w-4xl mx-auto mb-10 sm:mb-14 border border-amber-400/40 rounded-xl overflow-hidden bg-gradient-to-br from-amber-400/10 to-zinc-900"
+        >
+          <div className="flex flex-col sm:flex-row">
+            {/* Artwork */}
+            <div className="sm:w-48 md:w-56 flex-shrink-0">
+              <img
+                src="/budget-single.jpg"
+                alt="Budget — Yo Maps"
+                className="w-full h-48 sm:h-full object-cover"
+              />
+            </div>
+            {/* Info + video */}
+            <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between">
+              <div className="mb-4">
+                <span className="text-amber-400 tracking-widest uppercase text-[10px] mb-1 block">New Single · Vibes on Vibes</span>
+                <h3 className="text-2xl sm:text-3xl font-light tracking-wider text-white mb-1">BUDGET</h3>
+                <p className="text-gray-400 text-sm">ft. Frank Ro, Dizmo &amp; Kingtec · Prod. by Kingtec</p>
+              </div>
+              <div className="flex flex-wrap gap-3">
+                <a
+                  href="https://youtu.be/d1zKK1K2p6M?si=pKBzmrU_75k4qynX"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-red-600 hover:bg-red-700 text-white text-sm tracking-wider transition-colors rounded-sm"
+                >
+                  <img src="/youtube-icon.png" alt="YouTube" className="w-4 h-4 object-contain" />
+                  Watch on YouTube
+                </a>
+                <a
+                  href="https://open.spotify.com/track/1ulPW7cmYv1dpZeYIVqJo5?si=HXrMHkjmRS6qyvL9q9Nhqw"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="flex items-center gap-2 px-4 py-2.5 bg-green-500 hover:bg-green-600 text-white text-sm tracking-wider transition-colors rounded-sm"
+                >
+                  <img src="/spotify-icon.png" alt="Spotify" className="w-4 h-4 object-contain" />
+                  Stream on Spotify
+                </a>
+              </div>
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Video grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 max-w-6xl mx-auto mb-10">
           {videos.map((video, i) => (
             <motion.div key={video.embedId}
               initial={{ opacity: 0, y: 30 }}
