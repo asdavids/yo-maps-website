@@ -2,12 +2,20 @@ import { useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 
 export function SplashScreen() {
-  const [visible, setVisible] = useState(true);
+  const [visible, setVisible] = useState(() => {
+    // Only show once per session
+    if (typeof window !== 'undefined') {
+      return !sessionStorage.getItem('splash_shown');
+    }
+    return false;
+  });
 
   useEffect(() => {
+    if (!visible) return;
+    sessionStorage.setItem('splash_shown', '1');
     const timer = setTimeout(() => setVisible(false), 2400);
     return () => clearTimeout(timer);
-  }, []);
+  }, [visible]);
 
   return (
     <AnimatePresence>

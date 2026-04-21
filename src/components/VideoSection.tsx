@@ -50,7 +50,6 @@ function YouTubeFacade({ embedId, title }: { embedId: string; title: string }) {
 
 export function VideoSection() {
   const videos = [
-    { embedId: 'd1zKK1K2p6M', title: 'Budget ft. Frank Ro, Dizmo & Kingtec' },
     { embedId: 'yACnOHr5L4Y', title: 'Yo Maps — Featured Video' },
     { embedId: 'vDkimmBktms', title: 'Yo Maps — Featured Video 2' },
     { embedId: 'KjOBNrBEebI', title: 'Yo Maps — Featured Video 3' },
