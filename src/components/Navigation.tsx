@@ -33,6 +33,7 @@ export function Navigation() {
   const primaryLinks = [
     { name: 'Home', id: 'home' },
     { name: 'Music', id: 'music' },
+    { name: 'Merch', id: 'merch' },
     { name: 'Tour', id: 'tour' },
     { name: 'Gallery', id: 'gallery' },
     { name: 'Bookings', id: 'bookings' },
