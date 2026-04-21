@@ -19,7 +19,6 @@ export function MiniPlayer() {
   if (dismissed) return null;
 
   const track = tracks[trackIndex];
-
   const next = () => setTrackIndex((i) => (i + 1) % tracks.length);
   const prev = () => setTrackIndex((i) => (i - 1 + tracks.length) % tracks.length);
 
@@ -28,7 +27,9 @@ export function MiniPlayer() {
       initial={{ y: 100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ delay: 3, duration: 0.5, ease: 'backOut' }}
-      className="fixed bottom-24 left-4 z-40 w-[calc(100vw-2rem)] max-w-sm sm:left-6 sm:w-80"
+      // Left side, above WhatsApp button — safe spacing on all screen sizes
+      className="fixed bottom-6 left-4 z-40 w-[calc(100vw-5rem)] max-w-xs sm:left-6 sm:w-72"
+      style={{ marginBottom: 'env(safe-area-inset-bottom)' }}
     >
       <AnimatePresence>
         {open && (
@@ -39,7 +40,6 @@ export function MiniPlayer() {
             transition={{ duration: 0.25 }}
             className="mb-2 rounded-xl overflow-hidden border border-gray-800 bg-zinc-900/95 backdrop-blur-lg shadow-2xl"
           >
-            {/* YouTube embed */}
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
                 key={`${trackIndex}-${playing}`}
@@ -49,15 +49,13 @@ export function MiniPlayer() {
                 allowFullScreen
               />
             </div>
-
-            {/* Track info */}
             <div className="p-3 flex items-center justify-between">
               <div className="min-w-0">
                 <div className="text-white text-sm font-medium truncate">{track.title}</div>
                 <div className="text-gray-500 text-xs truncate">{track.feat}</div>
               </div>
-              <a href={track.spotifyUrl} target="_blank" rel="noreferrer">
-                <img src="/spotify-icon.png" alt="Spotify" className="w-5 h-5 object-contain opacity-60 hover:opacity-100 transition-opacity ml-3" />
+              <a href={track.spotifyUrl} target="_blank" rel="noreferrer" className="ml-3 flex-shrink-0">
+                <img src="/spotify-icon.png" alt="Spotify" className="w-5 h-5 object-contain opacity-60 hover:opacity-100 transition-opacity" />
               </a>
             </div>
           </motion.div>
@@ -65,38 +63,35 @@ export function MiniPlayer() {
       </AnimatePresence>
 
       {/* Player bar */}
-      <div className="rounded-xl border border-gray-800 bg-zinc-900/95 backdrop-blur-lg shadow-2xl px-3 py-2.5 flex items-center gap-3">
-        {/* Album pulse */}
+      <div className="rounded-xl border border-gray-800 bg-zinc-900/95 backdrop-blur-lg shadow-2xl px-3 py-2.5 flex items-center gap-2">
         <div className="relative flex-shrink-0">
           <div className={`w-8 h-8 rounded-full bg-amber-400/20 border border-amber-400/40 flex items-center justify-center ${playing ? 'animate-pulse' : ''}`}>
             <Music size={14} className="text-amber-400" />
           </div>
         </div>
 
-        {/* Track info */}
         <button onClick={() => setOpen(!open)} className="flex-1 text-left min-w-0">
           <div className="text-white text-xs font-medium truncate">{track.title}</div>
           <div className="text-gray-500 text-[10px] truncate">{track.feat}</div>
         </button>
 
-        {/* Controls */}
         <div className="flex items-center gap-1 flex-shrink-0">
-          <button onClick={prev} className="text-gray-400 hover:text-white transition-colors p-1">
+          <button onClick={prev} className="text-gray-400 hover:text-white transition-colors p-1 touch-manipulation">
             <SkipBack size={14} />
           </button>
           <button
             onClick={() => { setPlaying(!playing); if (!open) setOpen(true); }}
-            className="w-7 h-7 rounded-full bg-amber-400 flex items-center justify-center text-black hover:bg-amber-500 transition-colors"
+            className="w-7 h-7 rounded-full bg-amber-400 flex items-center justify-center text-black hover:bg-amber-500 transition-colors touch-manipulation"
           >
             {playing ? <Pause size={12} fill="currentColor" /> : <Play size={12} fill="currentColor" />}
           </button>
-          <button onClick={next} className="text-gray-400 hover:text-white transition-colors p-1">
+          <button onClick={next} className="text-gray-400 hover:text-white transition-colors p-1 touch-manipulation">
             <SkipForward size={14} />
           </button>
-          <button onClick={() => setOpen(!open)} className="text-gray-600 hover:text-amber-400 transition-colors p-1">
+          <button onClick={() => setOpen(!open)} className="text-gray-600 hover:text-amber-400 transition-colors p-1 touch-manipulation">
             <ChevronUp size={14} className={`transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
           </button>
-          <button onClick={() => setDismissed(true)} className="text-gray-600 hover:text-white transition-colors p-1">
+          <button onClick={() => setDismissed(true)} className="text-gray-600 hover:text-white transition-colors p-1 touch-manipulation">
             <X size={12} />
           </button>
         </div>

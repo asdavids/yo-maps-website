@@ -7,11 +7,7 @@ const streamingPlatforms = [
   { name: 'YouTube', href: 'https://youtube.com/@yomapsyo3164?si=B_iSsVUo0O_8ScfL', icon: '/youtube-icon.png' },
   { name: 'Boomplay', href: 'https://www.boomplay.com/artists/4334757', icon: '/boomplay-icon.png' },
   { name: 'Deezer', href: 'https://www.deezer.com/en/artist/61363442', icon: '/deezer-icon.png' },
-  {
-    name: 'TikTok',
-    href: 'https://www.tiktok.com/@yomapsyo?_r=1&_t=ZS-95fwV8hOsQq',
-    icon: null, // SVG inline
-  },
+  { name: 'TikTok', href: 'https://www.tiktok.com/@yomapsyo?_r=1&_t=ZS-95fwV8hOsQq', icon: null },
 ];
 
 const TikTokIcon = () => (
@@ -30,6 +26,7 @@ export function HeroSection() {
 
       <div className="relative h-full flex flex-col justify-end z-10 px-5 sm:px-6 pb-safe">
         <div className="pb-8 sm:pb-12">
+          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -40,26 +37,38 @@ export function HeroSection() {
               href="https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw"
               target="_blank"
               rel="noreferrer"
-              className="flex-1 sm:flex-none px-5 py-3 sm:px-8 sm:py-4 bg-amber-400 text-black tracking-wider hover:bg-amber-500 transition-all duration-300 flex items-center gap-2 justify-center font-medium text-sm"
+              className="flex-1 sm:flex-none min-w-0 px-4 py-3 sm:px-8 sm:py-4 bg-amber-400 text-black tracking-wider hover:bg-amber-500 transition-all duration-300 flex items-center gap-2 justify-center font-medium text-sm"
             >
-              <Play size={15} fill="currentColor" />
-              LISTEN NOW
+              <Play size={15} fill="currentColor" className="flex-shrink-0" />
+              <span className="truncate">LISTEN NOW</span>
             </a>
             <button
-              className="flex-1 sm:flex-none px-5 py-3 sm:px-8 sm:py-4 border-2 border-white text-white tracking-wider hover:bg-white hover:text-black transition-all duration-300 text-sm"
+              className="flex-1 sm:flex-none min-w-0 px-4 py-3 sm:px-8 sm:py-4 border-2 border-white text-white tracking-wider hover:bg-white hover:text-black transition-all duration-300 text-sm"
               onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
             >
               EXPLORE
             </button>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.7 }} className="flex items-center gap-2 mb-3">
+          {/* Stream on divider */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.7 }}
+            className="flex items-center gap-2 mb-3"
+          >
             <div className="w-6 h-px bg-white/20"></div>
-            <p className="text-white/40 text-[9px] tracking-[0.25em] uppercase mx-2">Stream on</p>
+            <p className="text-white/40 text-[9px] tracking-[0.2em] uppercase mx-2">Stream on</p>
             <div className="w-6 h-px bg-white/20"></div>
           </motion.div>
 
-          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.9 }} className="flex items-center gap-5">
+          {/* Streaming icons — wrap on tiny screens */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.9 }}
+            className="flex items-center flex-wrap gap-4 sm:gap-5"
+          >
             {streamingPlatforms.map((platform, index) => (
               <motion.a
                 key={platform.name}
@@ -70,8 +79,9 @@ export function HeroSection() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.9 + index * 0.08 }}
                 whileHover={{ scale: 1.2 }}
-                className="opacity-50 hover:opacity-100 transition-opacity duration-300 text-white"
+                className="opacity-50 hover:opacity-100 transition-opacity duration-300 text-white touch-manipulation"
                 title={platform.name}
+                style={{ minWidth: 24, minHeight: 24 }}
               >
                 {platform.icon
                   ? <img src={platform.icon} alt={platform.name} className="w-6 h-6 object-contain" />

@@ -67,7 +67,7 @@ export function AlbumCountdown() {
             <div key={unit.label} className="flex items-center gap-3 sm:gap-5">
               <div className="text-center">
                 <motion.div key={unit.value} initial={{ opacity: 0, y: -6 }} animate={{ opacity: 1, y: 0 }}
-                  className="text-2xl sm:text-3xl font-light text-amber-400 tabular-nums w-9 sm:w-12 text-center"
+                  className="text-xl sm:text-3xl font-light text-amber-400 tabular-nums w-8 sm:w-12 text-center"
                 >
                   {String(unit.value).padStart(2, '0')}
                 </motion.div>

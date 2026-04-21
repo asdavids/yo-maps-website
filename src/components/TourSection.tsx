@@ -68,7 +68,7 @@ export function TourSection() {
               <div className="hidden sm:grid py-6 sm:py-8 grid-cols-12 gap-6 sm:gap-8 items-center">
                 <div className="col-span-3 flex items-center gap-3">
                   <Calendar className="text-amber-400 flex-shrink-0" size={18} />
-                  <span className="tracking-wider text-sm">{show.date}</span>
+                  <span className="tracking-wider text-xs sm:text-sm">{show.date}</span>
                 </div>
                 <div className="col-span-5">
                   <div className="mb-1 font-medium">{show.venue}</div>
