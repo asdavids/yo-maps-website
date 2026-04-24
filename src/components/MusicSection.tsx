@@ -4,7 +4,7 @@ import { ImageWithFallback } from './figma/ImageWithFallback';
 
 export function MusicSection() {
   const albums = [
-    { title: 'VIBES ON VIBES', year: '2026', image: '/yo-maps-album.JPG', tracks: 16, feat: 'New Album · Apr 24, 2026', spotify: 'https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw' },
+    { title: 'VIBES ON VIBES', year: '2026', image: '/yo-maps-album.JPG', tracks: 16, feat: 'Out Now · Apr 24, 2026', spotify: 'https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA' },
     { title: 'KOMANDO', year: '2022', image: '/komando.JPG', tracks: 12, feat: 'Album of the Year 2022', spotify: 'https://open.spotify.com/album/1CWwQnaXuorrvpXaaHoAPQ?si=6PvzthX9SkmdYfNN1fjnDw' },
     { title: 'TRY AGAIN', year: '2020', image: '/try-again.jpg', tracks: 12, feat: 'Fan Favourite', spotify: 'https://open.spotify.com/album/4ntGqV2N4yix29JNEXEoCg?si=JRjiWyxPSzmjAPLKHo5KzA' },
   ];
@@ -60,7 +60,7 @@ export function MusicSection() {
               <img src="/yo-maps-album.JPG" alt="Vibes on Vibes" className="w-full h-48 sm:h-full object-cover" />
             </div>
             <div className="flex-1 p-4 sm:p-6 md:p-8">
-              <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">New Album Dropping</span>
+              <span className="text-amber-400 tracking-widest uppercase text-xs mb-2 block">Out Now 🎉</span>
               <h3 className="text-xl sm:text-3xl tracking-widest mb-1">VIBES ON VIBES</h3>
               <p className="text-gray-400 text-sm mb-4 sm:mb-6">April 24, 2026 · 16 Tracks</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-1.5">

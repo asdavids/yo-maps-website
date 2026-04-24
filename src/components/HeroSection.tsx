@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
 
 const streamingPlatforms = [
-  { name: 'Spotify', href: 'https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw', icon: '/spotify-icon.png' },
+  { name: 'Spotify', href: 'https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA', icon: '/spotify-icon.png' },
   { name: 'Apple Music', href: 'https://music.apple.com/zm/artist/yo-maps/1455955222', icon: '/apple-music-icon.png' },
   { name: 'YouTube', href: 'https://youtube.com/@yomapsyo3164?si=B_iSsVUo0O_8ScfL', icon: '/youtube-icon.png' },
   { name: 'Boomplay', href: 'https://www.boomplay.com/artists/4334757', icon: '/boomplay-icon.png' },
@@ -34,7 +34,7 @@ export function HeroSection() {
             className="flex flex-row gap-3 mb-6 sm:mb-8"
           >
             <a
-              href="https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw"
+              href="https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA"
               target="_blank"
               rel="noreferrer"
               className="flex-1 sm:flex-none min-w-0 px-4 py-3 sm:px-8 sm:py-4 bg-amber-400 text-black tracking-wider hover:bg-amber-500 transition-all duration-300 flex items-center gap-2 justify-center font-medium text-sm"

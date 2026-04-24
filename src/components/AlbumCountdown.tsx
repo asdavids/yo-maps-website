@@ -29,7 +29,7 @@ export function AlbumCountdown() {
         <div className="container mx-auto flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
           <span className="text-amber-400 tracking-[0.3em] uppercase text-xs sm:text-sm font-medium">🎉 VIBES ON VIBES — OUT NOW</span>
           <div className="flex items-center gap-3">
-            <a href="https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw" target="_blank" rel="noreferrer"
+            <a href="https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA" target="_blank" rel="noreferrer"
               className="flex items-center gap-1.5 px-3 py-1.5 bg-green-500 text-white text-xs tracking-wider rounded-full hover:bg-green-600 transition-colors"
             >
               <img src="/spotify-icon.png" alt="Spotify" className="w-3.5 h-3.5" /> Stream on Spotify
@@ -78,10 +78,10 @@ export function AlbumCountdown() {
           ))}
         </div>
         <div className="w-px h-8 bg-amber-400/20 hidden sm:block"></div>
-        <a href="https://open.spotify.com/artist/6ctMiUYEAd4cy0CaH355Hk?si=QCHFiyGJSX26VK_Ri8eoiw" target="_blank" rel="noreferrer"
+        <a href="https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA" target="_blank" rel="noreferrer"
           className="px-4 py-2 border border-amber-400 text-amber-400 text-xs tracking-widest hover:bg-amber-400 hover:text-black transition-all duration-300 whitespace-nowrap"
         >
-          PRE-SAVE
+          STREAM NOW
         </a>
       </div>
     </motion.div>
