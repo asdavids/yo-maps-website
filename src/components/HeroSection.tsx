@@ -3,7 +3,7 @@ import { Play } from 'lucide-react';
 
 const streamingPlatforms = [
   { name: 'Spotify', href: 'https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA', icon: '/spotify-icon.png' },
-  { name: 'Apple Music', href: 'https://music.apple.com/zm/artist/yo-maps/1455955222', icon: '/apple-music-icon.png' },
+  { name: 'Apple Music', href: 'https://music.apple.com/zm/album/vibes-on-vibes/1893808032', icon: '/apple-music-icon.png' },
   { name: 'YouTube', href: 'https://youtube.com/@yomapsyo3164?si=B_iSsVUo0O_8ScfL', icon: '/youtube-icon.png' },
   { name: 'Boomplay', href: 'https://www.boomplay.com/artists/4334757', icon: '/boomplay-icon.png' },
   { name: 'Deezer', href: 'https://www.deezer.com/en/artist/61363442', icon: '/deezer-icon.png' },
