@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { Play } from 'lucide-react';
+import { Starfield } from './ui/starfield-1';
 
 const streamingPlatforms = [
   { name: 'Spotify', href: 'https://open.spotify.com/album/02CdoLMFBQ8jTvFlzvrpYB?si=vTW--7sSRzmGSjhDM8knVA', icon: '/spotify-icon.png' },
@@ -21,6 +22,16 @@ export function HeroSection() {
     <section id="home" className="relative w-full overflow-hidden" style={{ height: '100svh' }}>
       <div className="absolute inset-0">
         <img src="/yo-maps-hero.jpg" alt="Yo Maps" className="w-full h-full object-cover object-right sm:object-center" />
+        {/* Starfield overlay — subtle, blends with the dark areas */}
+        <div className="absolute inset-0 mix-blend-screen opacity-60">
+          <Starfield
+            starColor="rgba(251,191,36,0.8)"
+            bgColor="rgba(0,0,0,0)"
+            speed={0.6}
+            quantity={180}
+            opacity={0}
+          />
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-black/90 sm:from-black/30 sm:via-transparent sm:to-black"></div>
       </div>
 
