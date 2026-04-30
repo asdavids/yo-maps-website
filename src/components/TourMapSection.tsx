@@ -3,13 +3,14 @@ import { MapPin, Calendar } from 'lucide-react';
 
 export function TourMapSection() {
   const venues = [
-    { city: 'Kolwezi', country: 'Congo DRC', date: 'Apr 18, 2026', coords: { top: '52%', left: '45%' } },
-    { city: 'Livingstone', country: 'Zambia', date: 'Apr 25, 2026', coords: { top: '72%', left: '52%' } },
     { city: 'Mufurila', country: 'Zambia', date: 'May 8, 2026', coords: { top: '55%', left: '54%' } },
     { city: 'Solwezi', country: 'Zambia', date: 'May 9, 2026', coords: { top: '50%', left: '48%' } },
-    { city: 'Lusaka', country: 'Zambia', date: 'May 23, 2026', coords: { top: '63%', left: '56%' } },
+    { city: 'Lusaka', country: 'Zambia', date: 'May 16 & 23, 2026', coords: { top: '63%', left: '56%' } },
+    { city: 'Livingstone', country: 'Zambia', date: 'May 22, 2026', coords: { top: '72%', left: '52%' } },
     { city: 'Nakonde', country: 'Zambia', date: 'May 29, 2026', coords: { top: '43%', left: '60%' } },
     { city: 'Kasama', country: 'Zambia', date: 'May 30, 2026', coords: { top: '47%', left: '59%' } },
+    { city: 'Kitwe', country: 'Zambia', date: 'Jul 4, 2026', coords: { top: '57%', left: '53%' } },
+    { city: 'Siavonga', country: 'Zambia', date: 'Aug 1, 2026', coords: { top: '66%', left: '57%' } },
   ];
 
   return (

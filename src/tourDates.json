@@ -1,44 +1,11 @@
 [
-  {
-    "date": "APR 18, 2026",
-    "venue": "Kolwezi",
-    "city": "Congo DRC",
-    "status": "On Sale"
-  },
-  {
-    "date": "APR 25, 2026",
-    "venue": "Livingstone",
-    "city": "Zambia",
-    "status": "On Sale"
-  },
-  {
-    "date": "MAY 8, 2026",
-    "venue": "Mufurila",
-    "city": "Zambia",
-    "status": "On Sale"
-  },
-  {
-    "date": "MAY 9, 2026",
-    "venue": "Solwezi",
-    "city": "Zambia",
-    "status": "On Sale"
-  },
-  {
-    "date": "MAY 23, 2026",
-    "venue": "Lusaka",
-    "city": "Zambia",
-    "status": "On Sale"
-  },
-  {
-    "date": "MAY 29, 2026",
-    "venue": "Nakonde",
-    "city": "Zambia",
-    "status": "On Sale"
-  },
-  {
-    "date": "MAY 30, 2026",
-    "venue": "Kasama",
-    "city": "Zambia",
-    "status": "On Sale"
-  }
+  { "date": "MAY 8, 2026", "venue": "Amchi Lounge", "city": "Mufurila, Zambia", "status": "On Sale" },
+  { "date": "MAY 9, 2026", "venue": "G Greens Pub & Grill", "city": "Solwezi, Zambia", "status": "On Sale" },
+  { "date": "MAY 16, 2026", "venue": "UNZA Ridgeway Nationalist Stadium", "city": "Lusaka, Zambia", "status": "On Sale" },
+  { "date": "MAY 22, 2026", "venue": "ZICSA 2026 AGM", "city": "Livingstone, Zambia", "status": "On Sale" },
+  { "date": "MAY 23, 2026", "venue": "Showgrounds", "city": "Lusaka, Zambia", "status": "On Sale" },
+  { "date": "MAY 29, 2026", "venue": "Izukanji Pub & Grill", "city": "Nakonde, Zambia", "status": "On Sale" },
+  { "date": "MAY 30, 2026", "venue": "Flames Pub & Grill", "city": "Kasama, Zambia", "status": "On Sale" },
+  { "date": "JUL 4, 2026", "venue": "Copperbelt University", "city": "Kitwe, Zambia", "status": "On Sale" },
+  { "date": "AUG 1, 2026", "venue": "Savee Beach Resort", "city": "Siavonga, Zambia", "status": "On Sale" }
 ]
